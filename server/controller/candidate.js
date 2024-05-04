@@ -1,4 +1,3 @@
-import express from 'express';
 import Candidate from '../models/schema.js';
 
 
@@ -39,7 +38,7 @@ export const allCandidate = async (req, res) => {
   export const deleteCandidate= async (req, res) => {
     try {
       const { id } = req.params;
-      // Find the candidate by ID and delete it
+      
       await Candidate.findByIdAndDelete(id);
       res.status(200).json({ message: 'Candidate deleted successfully' });
     } catch (error) {
@@ -49,19 +48,17 @@ export const allCandidate = async (req, res) => {
   };
 
 
-  // Assuming you have already set up your Express.js server and connected it to MongoDB
-
-// Define the route to handle PUT requests to edit a candidate
+  
 export const editCandidate= async (req, res) => {
     const candidateId = req.params.id;
     const { name, status, feedback, stars } = req.body;
   
     try {
-      // Update the candidate information in the database
+      
       const updatedCandidate = await Candidate.findByIdAndUpdate(
         candidateId,
         { name, status, feedback, stars },
-        { new: true } // Return the updated document
+        { new: true } 
       );
   
       if (!updatedCandidate) {

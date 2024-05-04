@@ -1,3 +1,4 @@
+/* Styles for the add candidate form */
 .add-candidate-form {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -6,12 +7,9 @@
     background-color: #f9f9f9;
     font-size: 23px;
     font-weight: 700;
-    
-
   }
   
   .add-candidate-form label {
-    
     display: block;
     margin-bottom: 10px;
   }
@@ -47,62 +45,44 @@
     background-color: #0056b3;
   }
   
-
-
-.candidate-form{
+  /* Styles for the candidate form */
+  .candidate-form {
     text-align: center;
-    
     background-repeat: no-repeat;
-    
-    
-    
     width: 100%;
     display: grid;
-    
-   
-    
-    
-    
-
-}
-
-
-.candidate-form  table{
-   
-    
-    
-    
-
-    
-
-}
-
-.candidate-form th {
+  }
+  
+  .candidate-form table {
+    /* Additional styles for table */
+  }
+  
+  .candidate-form th {
     font-size: 25px;
     border-radius: 5px;
     background-color: rgb(181, 181, 181);
-
-}
-.candidate-form td {
+  }
+  
+  .candidate-form td {
     text-align: center;
     border-radius: 5px;
-   
     background-color: rgb(209, 209, 209);
     font-size: 22px;
-}
-
-.candidate-form button{
+  }
+  
+  .candidate-form button {
     height: 50px;
-    display:flex;
+    display: flex;
     justify-content: center;
     border: 2px solid rgb(149, 149, 149);
     border-radius: 10px;
     align-items: center;
     cursor: pointer;
     font-size: 18px;
-
-}
-.actions{
+  }
+  
+  .actions {
     display: flex;
     background-color: #f9f9f9;
-}
+  }
+  

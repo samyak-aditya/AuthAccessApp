@@ -34,7 +34,7 @@ const CandidateInterviewForm = () => {
       // Refresh candidates list after adding a new candidate
       const response = await axios.get('http://localhost:5000/candidate/all');
       setCandidates(response.data.candidates);
-      // Clear form fields after submission
+      
       setName('');
       setStatus('Pending');
       setFeedback('');
@@ -48,10 +48,10 @@ const CandidateInterviewForm = () => {
 
   const handleDelete = async (id) => {
     try {
-      // Send request to delete candidate by id
+      
       await axios.delete(`http://localhost:5000/candidate/delete/${id}`);
       console.log('Candidate deleted successfully');
-      // Refresh candidates list after deletion
+      
       const response = await axios.get('http://localhost:5000/candidate/all');
       setCandidates(response.data.candidates);
     } catch (error) {
@@ -77,7 +77,7 @@ const CandidateInterviewForm = () => {
       // Refresh candidates list after editing
       const response = await axios.get('http://localhost:5000/candidate/all');
       setCandidates(response.data.candidates);
-      // Clear form fields after submission
+      
       setName('');
       setStatus('Pending');
       setFeedback('');
@@ -89,14 +89,14 @@ const CandidateInterviewForm = () => {
     }
   };
 
-  // Function to generate stars based on the stars value
+  
   const renderStars = (stars) => {
     const starComponents = [];
-    for (let i = 1; i <= 5; i++) { // Loop from 1 to 5 (total number of stars)
+    for (let i = 1; i <= 5; i++) { 
       if (i <= stars) {
-        starComponents.push(<span key={i} style={{ color: 'gold' }}>&#9733;</span>); // Filled star
+        starComponents.push(<span key={i} style={{ color: 'gold' }}>&#9733;</span>); 
       } else {
-        starComponents.push(<span key={i} style={{ color: 'gray' }}>&#9733;</span>); // Empty star
+        starComponents.push(<span key={i} style={{ color: 'gray' }}>&#9733;</span>);
       }
     }
     return starComponents;

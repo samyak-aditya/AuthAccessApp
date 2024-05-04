@@ -3,15 +3,17 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import router from './routes/routes.js';
 import bodyParser from 'express'
+import dotenv from 'dotenv';
 
 
-const app = express();
+dotenv.config();
+export const  app = express();
 
 
 app.use(cors());
 app.use(bodyParser.json());
-
-mongoose.connect('mongodb+srv://Samyak:Cyber10@cluster0.t5hemdi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+dotenv
+mongoose.connect(process.env.mongo_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -30,3 +32,4 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
+

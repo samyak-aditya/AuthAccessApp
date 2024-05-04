@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import User from '../models/User.js'; // Import your Mongoose User model
+import User from '../models/User.js'; 
 
-const JWT_SECRET = 'your_secret_key_here';
+const JWT_SECRET = process.env.jwt_secret;
 
 const signToken = (userId) => {
   return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '1h' });
@@ -18,10 +18,9 @@ export const signup = async (req, res) => {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user document
+   
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
 
@@ -39,19 +38,19 @@ export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    // Find user by username
+    
     const user = await User.findOne({ username });
     if (!user) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
 
-    // Compare passwords
+   
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
 
-    // Generate JWT token
+    
     const token = signToken(user._id);
 
     res.status(200).json({ message: 'Login successful', token });
