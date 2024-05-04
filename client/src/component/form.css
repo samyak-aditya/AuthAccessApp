@@ -1,0 +1,108 @@
+.add-candidate-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 23px;
+    font-weight: 700;
+    
+
+  }
+  
+  .add-candidate-form label {
+    
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .add-candidate-form input[type="text"],
+  .add-candidate-form textarea,
+  .add-candidate-form select {
+    width: 100%;
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #a4a4a4;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  
+  .add-candidate-form textarea {
+    width: 100%;
+  }
+  
+  .add-candidate-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+  }
+  
+  .add-candidate-form button:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+.candidate-form{
+    text-align: center;
+    
+    background-repeat: no-repeat;
+    
+    
+    
+    width: 100%;
+    display: grid;
+    
+   
+    
+    
+    
+
+}
+
+
+.candidate-form  table{
+   
+    
+    
+    
+
+    
+
+}
+
+.candidate-form th {
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: rgb(181, 181, 181);
+
+}
+.candidate-form td {
+    text-align: center;
+    border-radius: 5px;
+   
+    background-color: rgb(209, 209, 209);
+    font-size: 22px;
+}
+
+.candidate-form button{
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    border: 2px solid rgb(149, 149, 149);
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+.actions{
+    display: flex;
+    background-color: #f9f9f9;
+}

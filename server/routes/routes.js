@@ -1,5 +1,6 @@
 import express from 'express';
-import { addCandidate,allCandidate } from '../controller/candidate.js';
+import { addCandidate, allCandidate, deleteCandidate, editCandidate } from '../controller/candidate.js';
+import { login, signup } from '../controller/auth.js';
 
 
 const router = express.Router();
@@ -10,12 +11,14 @@ router.get('/candidate/all', allCandidate)
 
 // POST route
 router.post('/candidate/add', addCandidate);
-router.post('/signup', (req, res) => {
-  const { body } = req;
-  res.json({ message: 'POST request received', data: body });
-});
+router.post('/signup', signup);
+router.post('/login', login);
 
 
+// DELETE route
+router.delete('/candidate/delete/:id',deleteCandidate);
 
+//PUT route
+router.put('/candidate/edit/:id', editCandidate);
 
 export default router;

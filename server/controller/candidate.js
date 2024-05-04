@@ -36,4 +36,42 @@ export const allCandidate = async (req, res) => {
     }
   };
 
+  export const deleteCandidate= async (req, res) => {
+    try {
+      const { id } = req.params;
+      // Find the candidate by ID and delete it
+      await Candidate.findByIdAndDelete(id);
+      res.status(200).json({ message: 'Candidate deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting candidate:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  };
 
+
+  // Assuming you have already set up your Express.js server and connected it to MongoDB
+
+// Define the route to handle PUT requests to edit a candidate
+export const editCandidate= async (req, res) => {
+    const candidateId = req.params.id;
+    const { name, status, feedback, stars } = req.body;
+  
+    try {
+      // Update the candidate information in the database
+      const updatedCandidate = await Candidate.findByIdAndUpdate(
+        candidateId,
+        { name, status, feedback, stars },
+        { new: true } // Return the updated document
+      );
+  
+      if (!updatedCandidate) {
+        return res.status(404).json({ message: 'Candidate not found' });
+      }
+  
+      res.status(200).json({ message: 'Candidate updated successfully', candidate: updatedCandidate });
+    } catch (error) {
+      console.error('Error updating candidate:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  };
+  
