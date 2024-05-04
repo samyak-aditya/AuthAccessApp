@@ -28,7 +28,7 @@ const SigninForm = () => {
   return (
     <div className='container'>
         
-      <h2>Signin</h2>
+        <h2 style={{color: 'white'}}>Signup</h2>
       <form className='card' onSubmit={HandleSignin}>
         <div >
           

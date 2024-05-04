@@ -2,9 +2,10 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import User from '../models/User.js'; 
 
-const JWT_SECRET = process.env.jwt_secret;
+
 
 const signToken = (userId) => {
+const JWT_SECRET = process.env.jwt_secret;
   return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '1h' });
 };
 

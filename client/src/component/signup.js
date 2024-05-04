@@ -27,18 +27,20 @@ const SignupForm = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={HandleSignup}>
-        <div>
-         
-          <input placeholder='Username' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+    <div className='container'>
+        
+     
+      <form className='card' onSubmit={HandleSignup}>
+      <h2 style={{color: 'white'}}>Signup</h2>
+        <div >
+          
+          <input placeholder='Username:' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          
+          <input placeholder='Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit">Sign In</button>
       </form>
     </div>
   );
