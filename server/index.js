@@ -12,7 +12,7 @@ export const  app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-dotenv
+
 mongoose.connect(process.env.mongo_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
