@@ -2,8 +2,14 @@
 
 # Project Name
 
-## Installation Guide
+### Security Measures Implemented:
 
+- Implemented JSON Web Tokens (JWT) for secure authentication and authorization.
+- Utilized the .env file to store sensitive environment variables securely.
+- Employed bcrypt to hash passwords, enhancing security by safeguarding user credentials.
+  
+## Installation Guide
+*note* - Including the .env file in the repository is not considered standard practice, but it was included for the ease of running the code for your team.
 ### Prerequisites
 Before you begin, ensure you have the following installed:
 - Node.js and npm (Node Package Manager)
