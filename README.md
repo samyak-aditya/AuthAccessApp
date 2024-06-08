@@ -1,6 +1,6 @@
 
 
-# Auth Access App
+# AuthAccess App
 
 ### Security Measures Implemented:
 
